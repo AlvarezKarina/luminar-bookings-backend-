@@ -35,3 +35,18 @@ Route::post('/usuario/store', array(
     'store'
 
 ))->name('usuario.store');
+
+
+Route::group(array(
+
+    'prefix' => "auth" 
+), function(){
+
+    //Ruta para registrar un nuevo usuario. 
+    Route::post('register', array(
+        AuthController::class,
+        'registerUusuario'
+    ))->name('auth.register');
+}
+
+);
