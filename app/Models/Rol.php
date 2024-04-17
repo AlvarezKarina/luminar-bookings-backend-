@@ -23,5 +23,6 @@ class Rol extends Model
     private $hidden = array(
         'id',
         'updated_at',
+        'created_at'
     );
 }

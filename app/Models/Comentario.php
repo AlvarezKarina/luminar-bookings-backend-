@@ -26,7 +26,13 @@ class Comentario extends Model
 
  protected $hidden= array (
   'usuario_id', 
-  'evento_id');
+  'evento_id',
+  'created_at', 
+  'updated_at'
+
+);
+  
+
 
 
     
@@ -38,6 +44,9 @@ class Comentario extends Model
 
     public function usuario()
     {
-        return $this->belongsTo(Usuario::class, 'usuario_id');
+        return $this->belongsTo(RolUsuario::class, 'usuario_id');
     }
+
+
+    
 }

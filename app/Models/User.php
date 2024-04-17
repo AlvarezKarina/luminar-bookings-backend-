@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+//Vinculando libreria de token. 
+
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;

@@ -40,6 +40,12 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        //habilita el uso de la libreria de Passport
+        'api' =>[
+            'drive' => 'passport',
+            'provider' => 'users', 
+        ],
     ],
 
     /*

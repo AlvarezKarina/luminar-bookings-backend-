@@ -15,5 +15,8 @@ class User extends Authenticatable{
     protected $table = 'categoria_evento';
     protected $fillable = array(
 'nombre_categoria'
+
 );
+
+protected $hidden = ['created_at', 'updated_at'];
 }

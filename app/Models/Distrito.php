@@ -24,4 +24,14 @@ class Distrito extends Model
         'municipio_id',
         'updated_at',
     );
+
+    public function municipio()
+    {
+        return $this->belongsTo(Municipio::class);
+    }
+
+    public function rolEmpresas()
+    {
+        return $this->hasMany(RolEmpresa::class);
+    }
 }

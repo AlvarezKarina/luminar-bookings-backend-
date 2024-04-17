@@ -16,6 +16,9 @@ class TipoEvento extends Model
     protected $table = 'tipo_evento';
     public $timestamps = false;
     protected $fillable = array('nombre_tipo');
+
+    protected $hidden = ['created_at', 'updated_at'];
+
 }
 
 

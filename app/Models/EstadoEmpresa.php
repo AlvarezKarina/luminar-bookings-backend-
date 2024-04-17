@@ -17,4 +17,7 @@ class User extends Authenticatable
      protected $table = 'estado';
      public $timestamps = false;
      protected $fillable = array('tipo_estado');
- }
+ 
+     protected $hidden = ['created_at', 'updated_at'];
+ 
+    }

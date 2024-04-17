@@ -24,5 +24,6 @@ class EstadoEvento extends Model
     //Campos a ocultar en la consulta. 
     protected $hidden = array(
         'id',
+        'created_at', 'updated_at'
     );
 }

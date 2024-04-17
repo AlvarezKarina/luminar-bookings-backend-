@@ -2,30 +2,31 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model;
 
-class User extends Authenticatable{
-
-
-    
-    use HasFactory, Notifiable; }
 
     class Evento extends Model
     {
+
+        use HasFactory;
         protected $table = 'evento';
         public $timestamps = false;
-        protected $primaryKey = 'id';
         protected $fillable = array(
-     'nombre',
-     'descripcion',
-     'categoria_id',
-     'precio',
-     'asistentes', 
-     'direccion',
-     'foto',
+            'nombre',
+            'descripcion',
+            'categoria_id',
+            'tipo_id',
+            'precio',
+            'asistentes',
+            'direccion',
+            'foto',
+            'distrito',
+            'estado_id',
+            'fecha',
+            'hora_inicio',
+            'hora_fin',
+            'delete_at'
      );
     
       protected $hidden= array (
@@ -36,17 +37,22 @@ class User extends Authenticatable{
     
         public function categoria()
         {
-            return $this->belongsTo(CategoriaEvento::class, 'categoria_id');
+            return $this->belongsTo(CategoriaEvento::class);
         }
     
         public function tipo()
         {
-            return $this->belongsTo(TipoEvento::class, 'tipo_id');
+            return $this->belongsTo(TipoEvento::class);
         }
     
         public function distrito()
         {
-            return $this->belongsTo(Distrito::class, 'distrito_id');
+            return $this->belongsTo(Distrito::class);
+        }
+    
+        public function estado()
+        {
+            return $this->belongsTo(EstadoEvento::class);
         }
     }
     

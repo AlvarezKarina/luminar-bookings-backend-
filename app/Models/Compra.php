@@ -32,4 +32,9 @@ class Compra extends Model
         'usuario_id',
         'updated_at',
     );
+
+    public function usuario()
+    {
+        return $this->belongsTo(RolUsuario::class, 'usuario_id');
+    }
 }

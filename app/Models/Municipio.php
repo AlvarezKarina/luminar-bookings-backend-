@@ -25,4 +25,14 @@ class Municipio extends Model
         'departamento_id',
         'updated_at',
      );
+
+     public function departamento()
+     {
+         return $this->belongsTo(Departamento::class);
+     }
+ 
+     public function distritos()
+     {
+         return $this->hasMany(Distrito::class);
+     }
 }

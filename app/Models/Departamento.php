@@ -23,4 +23,9 @@ class Departamento extends Model
         'updated_at',
        );
 
+       public function municipios()
+       {
+           return $this->hasMany(Municipio::class);
+       }
+
 }
